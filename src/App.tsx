@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { FloatButton } from "antd";
 import { AppstoreOutlined } from "@ant-design/icons";
 
@@ -116,7 +116,7 @@ function Dashboard() {
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="min-h-screen bg-slate-50 font-sans">
         <main className="max-w-[1920px] mx-auto w-full">
           <Routes>
@@ -179,6 +179,6 @@ export default function App() {
           <GlobalNavButton />
         </main>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }

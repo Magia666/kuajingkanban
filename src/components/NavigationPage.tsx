@@ -114,6 +114,7 @@ const pageGroups = [
     icon: <AppstoreOutlined className="text-pink-500" />,
     pages: [
       { path: '/file-download-task', name: '文件下载任务' },
+      { path: '/frame', name: '内嵌框架 (Frame)' },
     ]
   }
 ];

@@ -100,7 +100,7 @@ export default function FramePage() {
                 type="dashed"
                 size="small"
                 onClick={() => {
-                  const target = window.location.origin + "/#" + p.path;
+                  const target = window.location.origin + p.path;
                   setInputUrl(target);
                   handleApplyUrl(target);
                 }}
@@ -129,7 +129,7 @@ export default function FramePage() {
               <Button
                 type="primary"
                 onClick={() => {
-                  const demoUrl = window.location.origin + "/#/merchandise-page";
+                  const demoUrl = window.location.origin + "/merchandise-page";
                   setInputUrl(demoUrl);
                   handleApplyUrl(demoUrl);
                 }}
