@@ -62,6 +62,7 @@ import FileDownloadTaskPage from "@/components/FileDownloadTaskPage";
 import ProductCollectionPage from "@/components/ProductCollectionPage";
 import InventorySyncPage from "@/components/InventorySyncPage";
 import NavigationPage from "@/components/NavigationPage";
+import FramePage from "@/components/FramePage";
 
 function GlobalNavButton() {
   const navigate = useNavigate();
@@ -173,6 +174,7 @@ export default function App() {
             <Route path="/invitation-withdrawal" element={<InvitationWithdrawalPage />} />
             <Route path="/commission-flow" element={<CommissionFlowPage />} />
             <Route path="/file-download-task" element={<FileDownloadTaskPage />} />
+            <Route path="/frame" element={<FramePage />} />
           </Routes>
           <GlobalNavButton />
         </main>
