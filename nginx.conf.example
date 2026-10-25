@@ -1,0 +1,25 @@
+server {
+    # 监听80端口
+    listen 80;
+    # 你的域名或IP地址
+    server_name localhost; 
+
+    # 替换为你的前端项目 build / dist 后在服务器上的绝对路径
+    # 例如：/usr/share/nginx/html 或 /var/www/my-app/dist
+    root /path/to/your/dist; 
+    
+    index index.html index.htm;
+
+    location / {
+        # 核心配置：尝试访问请求的文件或目录，如果找不到，就重定向到 /index.html
+        # 这对于使用 BrowserRouter 的 React 单页应用 (SPA) 至关重要
+        try_files $uri $uri/ /index.html;
+    }
+
+    # 可选：缓存静态资源（如 js, css, 图片等），提高加载速度
+    location ~* \.(?:ico|css|js|gif|jpe?g|png|woff2?|eot|ttf|svg)$ {
+        expires 6M;
+        access_log off;
+        add_header Cache-Control "public";
+    }
+}
