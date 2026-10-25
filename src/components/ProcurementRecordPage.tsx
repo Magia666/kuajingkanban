@@ -27,13 +27,13 @@ const ProcurementRecordPage: React.FC = () => {
   ];
 
   const statistics = [
-    { title: '采购记录数', value: 0 },
-    { title: '平台订单数', value: 0 },
-    { title: '订单商品数量', value: 0 },
-    { title: '订单实收金额(元)', value: 0.00, precision: 2 },
-    { title: '采购商品数量', value: 0 },
-    { title: '采购商品成本(元)', value: 0.00, precision: 2 },
-    { title: '总利润(元)', value: 0.00, precision: 2 },
+    { title: '采购批次数', value: 6 },
+    { title: '关联订单数', value: 6 },
+    { title: '采购商品总件数', value: 1300 },
+    { title: '订单实收金额(元)', value: 142500.00, precision: 2 },
+    { title: '采购供货总成本(元)', value: 58260.00, precision: 2 },
+    { title: '综合预估毛利(元)', value: 84240.00, precision: 2 },
+    { title: '平均单件供货价(元)', value: 44.82, precision: 2 },
   ];
 
   return (
@@ -46,13 +46,33 @@ const ProcurementRecordPage: React.FC = () => {
           <Col span={6}><Input placeholder="订单号" /></Col>
           <Col span={6}><Input placeholder="快递单号" /></Col>
           <Col span={6}>
-            <Select placeholder="采购平台" style={{ width: '100%' }} allowClear />
+            <Select 
+              placeholder="采购平台" 
+              style={{ width: '100%' }} 
+              allowClear 
+              options={[
+                { label: '全部渠道', value: 'all' },
+                { label: '1688批发网', value: '1688' },
+                { label: '工厂直供线下采购', value: 'factory' },
+                { label: '淘工厂/淘宝企业采购', value: 'taobao' },
+              ]}
+            />
           </Col>
-          <Col span={6}><RangePicker showTime style={{ width: '100%' }} /></Col>
-          <Col span={6}><RangePicker showTime style={{ width: '100%' }} /></Col>
+          <Col span={6}><RangePicker showTime placeholder={['采购开始时间', '采购结束时间']} style={{ width: '100%' }} /></Col>
+          <Col span={6}><RangePicker showTime placeholder={['入库开始时间', '入库结束时间']} style={{ width: '100%' }} /></Col>
           <Col span={6}><Input placeholder="采购账户" /></Col>
           <Col span={6}>
-            <Select placeholder="平台类型" style={{ width: '100%' }} allowClear />
+            <Select 
+              placeholder="出海销售平台" 
+              style={{ width: '100%' }} 
+              allowClear 
+              options={[
+                { label: '全部平台', value: 'all' },
+                { label: 'Shopee', value: 'shopee' },
+                { label: 'TikTok Shop', value: 'tiktok' },
+                { label: 'Lazada', value: 'lazada' },
+              ]}
+            />
           </Col>
           <Col span={24}>
             <Space>
@@ -70,9 +90,15 @@ const ProcurementRecordPage: React.FC = () => {
 
       <Row gutter={[16, 16]} className="mb-4">
         {statistics.map((item, index) => (
-          <Col span={3} key={index}>
-            <Card type="inner" bodyStyle={{ padding: '12px' }}>
-              <Statistic title={item.title} value={item.value} precision={item.precision} />
+          <Col span={index === 6 ? 4 : 3} key={index}>
+            <Card type="inner" bodyStyle={{ padding: '12px' }} className="shadow-xs">
+              <Statistic 
+                title={<span className="text-xs text-slate-500">{item.title}</span>} 
+                value={item.value} 
+                precision={item.precision} 
+                prefix={item.title.includes('(元)') ? '¥' : undefined}
+                valueStyle={{ fontSize: '18px', fontWeight: 600, color: index === 5 ? '#16a34a' : '#1e293b' }}
+              />
             </Card>
           </Col>
         ))}

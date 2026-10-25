@@ -7,13 +7,13 @@ import {
 } from "lucide-react";
 
 const flowData = [
-  { id: 1, step: '店铺入驻', count: 5682, rate: '100%', icon: Store, isLow: false },
-  { id: 2, step: '商品发布', count: 4850, rate: '85.4%', icon: UploadCloud, isLow: false },
-  { id: 3, step: '流量曝光', count: 3200, rate: '66.0%', icon: Eye, isLow: true },
-  { id: 4, step: '商流转化', count: 2850, rate: '89.1%', icon: MousePointerClick, isLow: false },
-  { id: 5, step: '订单达成', count: 1540, rate: '54.0%', icon: CreditCard, isLow: true },
-  { id: 6, step: '仓配发货', count: 1480, rate: '96.1%', icon: Truck, isLow: false },
-  { id: 7, step: '订单结算', count: 1420, rate: '95.9%', icon: CheckSquare, isLow: false },
+  { id: 1, step: '商品刊登铺货', count: 5680, unit: '款SKU', rate: '100%', icon: Store, isLow: false },
+  { id: 2, step: '多店铺同步上架', count: 4850, unit: '款SKU', rate: '85.4%', icon: UploadCloud, isLow: false },
+  { id: 3, step: '产生动销爆款', count: 3200, unit: '款SKU', rate: '66.0%', icon: Eye, isLow: true },
+  { id: 4, step: '订单成交总数', count: 3214, unit: '笔订单', rate: '100%', icon: CreditCard, isLow: false },
+  { id: 5, step: '集运打包换标', count: 3180, unit: '件包裹', rate: '98.9%', icon: Truck, isLow: false },
+  { id: 6, step: '跨境干线派送', count: 3140, unit: '件包裹', rate: '98.7%', icon: Truck, isLow: false },
+  { id: 7, step: '买家签收结算', count: 3095, unit: '笔回款', rate: '98.6%', icon: CheckSquare, isLow: false },
 ];
 
 const resources = [
@@ -27,7 +27,10 @@ export function FunnelResources() {
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
       <Card className="lg:col-span-3">
         <CardHeader>
-          <CardTitle>跨境电商全链路业务流程</CardTitle>
+          <div className="flex justify-between items-center">
+            <CardTitle>跨境电商全链路业务转化漏斗</CardTitle>
+            <span className="text-xs text-slate-500 font-normal">统计周期：近30天全业务链</span>
+          </div>
         </CardHeader>
         <CardContent className="py-6 h-[480px] overflow-y-auto">
           <div className="flex flex-col items-center gap-2">
@@ -52,7 +55,7 @@ export function FunnelResources() {
                     
                     <div className="flex items-center gap-8">
                       <div className="flex flex-col items-end">
-                        <span className="text-[10px] text-slate-500 font-medium">数量</span>
+                        <span className="text-[10px] text-slate-500 font-medium">数量 ({item.unit})</span>
                         <span className={`font-bold text-sm sm:text-base ${item.isLow ? 'text-rose-700' : 'text-slate-700'}`}>
                           {item.count.toLocaleString()}
                         </span>

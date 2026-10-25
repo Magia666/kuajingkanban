@@ -42,10 +42,10 @@ export default function DataMonitoring() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 sm:px-0">
-        <MonitorCard icon={<Eye />} label="全站实时浏览" value="1,248" change="+12%" />
-        <MonitorCard icon={<MousePointerClick />} label="实时点击量" value="8,562" change="+8.4%" />
-        <MonitorCard icon={<Users />} label="在线访客" value="3,214" change="+15%" />
-        <MonitorCard icon={<TrendingUp />} label="实时转化率" value="4.25%" change="+0.8%" />
+        <MonitorCard icon={<Eye />} label="全站实时浏览 (PV)" value="28,450" change="+12.4%" />
+        <MonitorCard icon={<MousePointerClick />} label="实时点击量 (Clicks)" value="8,562" change="+8.4%" />
+        <MonitorCard icon={<Users />} label="在线访客 (UV)" value="3,214" change="+15.2%" />
+        <MonitorCard icon={<TrendingUp />} label="实时转化率 (CR)" value="4.25%" change="+0.8%" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 sm:px-0">

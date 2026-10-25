@@ -49,85 +49,85 @@ const CommonAddressPage: React.FC = () => {
         <Table 
           columns={columns} 
           dataSource={[
-  {
-    key: "1",
-    platform: "淘宝",
-    name: "2024新款智能手表监控防水运动手环",
-    province: "广东省深圳市南山区科兴科学园1栋600室",
-    city: "广东省深圳市南山区科兴科学园1栋600室",
-    district: "广东省深圳市南山区科兴科学园1栋600室",
-    country: 10,
-    phone: "13880000000",
-    address: "广东省深圳市南山区科兴科学园1栋600室",
-    type: "电子产品",
-    isDefault: "是"
-  },
-  {
-    key: "2",
-    platform: "1688联盟",
-    name: "无线蓝牙耳机降噪入耳式长续航",
-    province: "广东省深圳市南山区科兴科学园2栋601室",
-    city: "广东省深圳市南山区科兴科学园2栋601室",
-    district: "广东省深圳市南山区科兴科学园2栋601室",
-    country: 25,
-    phone: "13880012345",
-    address: "广东省深圳市南山区科兴科学园2栋601室",
-    type: "服装服饰",
-    isDefault: "否"
-  },
-  {
-    key: "3",
-    platform: "独立站 Shopify",
-    name: "纯棉短袖T恤男夏季宽松百搭",
-    province: "广东省深圳市南山区科兴科学园3栋602室",
-    city: "广东省深圳市南山区科兴科学园3栋602室",
-    district: "广东省深圳市南山区科兴科学园3栋602室",
-    country: 40,
-    phone: "13880024690",
-    address: "广东省深圳市南山区科兴科学园3栋602室",
-    type: "家居日用",
-    isDefault: "否"
-  },
-  {
-    key: "4",
-    platform: "Amazon US",
-    name: "户外便携运动水杯大容量防漏",
-    province: "广东省深圳市南山区科兴科学园4栋603室",
-    city: "广东省深圳市南山区科兴科学园4栋603室",
-    district: "广东省深圳市南山区科兴科学园4栋603室",
-    country: 55,
-    phone: "13880037035",
-    address: "广东省深圳市南山区科兴科学园4栋603室",
-    type: "户外运动",
-    isDefault: "否"
-  },
-  {
-    key: "5",
-    platform: "Shopee MY",
-    name: "家用多功能颈椎按摩仪护颈",
-    province: "广东省深圳市南山区科兴科学园5栋604室",
-    city: "广东省深圳市南山区科兴科学园5栋604室",
-    district: "广东省深圳市南山区科兴科学园5栋604室",
-    country: 70,
-    phone: "13880049380",
-    address: "广东省深圳市南山区科兴科学园5栋604室",
-    type: "美妆个护",
-    isDefault: "否"
-  },
-  {
-    key: "6",
-    platform: "京东",
-    name: "2024新款智能手表监控防水运动手环",
-    province: "广东省深圳市南山区科兴科学园6栋605室",
-    city: "广东省深圳市南山区科兴科学园6栋605室",
-    district: "广东省深圳市南山区科兴科学园6栋605室",
-    country: 85,
-    phone: "13880061725",
-    address: "广东省深圳市南山区科兴科学园6栋605室",
-    type: "电子产品",
-    isDefault: "否"
-  }
-]} 
+            {
+              key: "1",
+              platform: "Shopee / TikTok",
+              name: "李建华 (东莞虎门仓发运点)",
+              province: "广东省",
+              city: "东莞市",
+              district: "虎门镇",
+              country: "中国 (CN)",
+              phone: "138-2391-8820",
+              address: "大宁工业区跨境智慧物流园A栋3层质检交运中心",
+              type: "发货与交运点",
+              isDefault: "是"
+            },
+            {
+              key: "2",
+              platform: "全平台通用",
+              name: "张海龙 (深圳保税退件组)",
+              province: "广东省",
+              city: "深圳市",
+              district: "宝安区",
+              country: "中国 (CN)",
+              phone: "139-8812-7711",
+              address: "福永街道保税物流中心3号保税总仓退件质检收件处",
+              type: "退货接收地址",
+              isDefault: "否"
+            },
+            {
+              key: "3",
+              platform: "Shopee / Lazada",
+              name: "Tan Boon Wah (MY Hub)",
+              province: "雪兰莪州 (Selangor)",
+              city: "莎阿南 (Shah Alam)",
+              district: "Seksyen 22",
+              country: "马来西亚 (MY)",
+              phone: "+60 12-345-6789",
+              address: "No. 18, Jalan TP 5, Taman Perindustrian UEP",
+              type: "海外自提与退仓",
+              isDefault: "否"
+            },
+            {
+              key: "4",
+              platform: "Lazada / TikTok",
+              name: "Somchai Prasert (TH Hub)",
+              province: "曼谷 (Bangkok)",
+              city: "邦纳区 (Bang Na)",
+              district: "Bangna-Trad",
+              country: "泰国 (TH)",
+              phone: "+66 81-234-5678",
+              address: "88/1 Moo 12, Bangna-Trad Road Km. 19",
+              type: "海外自提与退仓",
+              isDefault: "否"
+            },
+            {
+              key: "5",
+              platform: "Shopee SG",
+              name: "Kelvin Tan (SG Hub)",
+              province: "裕廊西 (Jurong West)",
+              city: "新加坡 (Singapore)",
+              district: "Pioneer",
+              country: "新加坡 (SG)",
+              phone: "+65 9123-4567",
+              address: "15 Pioneer Walk, Pioneer Logistics Centre #03-02",
+              type: "中转派送中心",
+              isDefault: "否"
+            },
+            {
+              key: "6",
+              platform: "1688货盘采购",
+              name: "王勇 (义乌货源集货仓)",
+              province: "浙江省",
+              city: "金华市",
+              district: "义乌市",
+              country: "中国 (CN)",
+              phone: "137-5501-9922",
+              address: "北苑街道秋实路118号国际跨境电商物流园B2栋",
+              type: "采购集货点",
+              isDefault: "否"
+            }
+          ]} 
           locale={{ emptyText: '暂无数据' }}
           pagination={{ placement: 'bottomRight' }}
         />

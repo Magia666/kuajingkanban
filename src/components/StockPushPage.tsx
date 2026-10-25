@@ -54,61 +54,61 @@ const StockPushPage: React.FC = () => {
         <Table 
           columns={columns} 
           dataSource={[
-  {
-    key: "1",
-    ruleName: "2024新款智能手表监控防水运动手环",
-    productSku: "2024新款智能手表监控防水运动手环",
-    storeName: "跨境小店 US",
-    warehouse: "美西一仓",
-    time: "2024-05-10 14:10:00",
-    status: "处理中"
-  },
-  {
-    key: "2",
-    ruleName: "无线蓝牙耳机降噪入耳式长续航",
-    productSku: "无线蓝牙耳机降噪入耳式长续航",
-    storeName: "跨境小店 UK",
-    warehouse: "深圳总仓",
-    time: "2024-05-11 14:15:00",
-    status: "已发货"
-  },
-  {
-    key: "3",
-    ruleName: "纯棉短袖T恤男夏季宽松百搭",
-    productSku: "纯棉短袖T恤男夏季宽松百搭",
-    storeName: "跨境小店 SG",
-    warehouse: "义乌中转仓",
-    time: "2024-05-12 14:20:00",
-    status: "待付款"
-  },
-  {
-    key: "4",
-    ruleName: "户外便携运动水杯大容量防漏",
-    productSku: "户外便携运动水杯大容量防漏",
-    storeName: "跨境小店 MY",
-    warehouse: "美东二仓",
-    time: "2024-05-13 14:25:00",
-    status: "已完成"
-  },
-  {
-    key: "5",
-    ruleName: "家用多功能颈椎按摩仪护颈",
-    productSku: "家用多功能颈椎按摩仪护颈",
-    storeName: "跨境小店 PH",
-    warehouse: "法兰克福仓",
-    time: "2024-05-14 14:30:00",
-    status: "已取消"
-  },
-  {
-    key: "6",
-    ruleName: "2024新款智能手表监控防水运动手环",
-    productSku: "2024新款智能手表监控防水运动手环",
-    storeName: "跨境小店 US",
-    warehouse: "美西一仓",
-    time: "2024-05-15 14:35:00",
-    status: "退款中"
-  }
-]} 
+            {
+              key: "1",
+              ruleName: "Shopee马来西亚现货定时推仓",
+              productSku: "3C-ANC08-BLK",
+              storeName: "Shopee 马来西亚1号旗舰店",
+              warehouse: "深圳宝安保税总仓",
+              time: "2024-10-24 10:15:00",
+              status: "推送成功"
+            },
+            {
+              key: "2",
+              ruleName: "TikTok印尼美妆货盘库存实时同步",
+              productSku: "3C-GAN65-SLV",
+              storeName: "TikTok Shop 印尼官方美妆店",
+              warehouse: "东莞虎门跨境集运仓",
+              time: "2024-10-24 10:12:30",
+              status: "推送成功"
+            },
+            {
+              key: "3",
+              ruleName: "Lazada泰国智能穿戴自动推仓",
+              productSku: "3C-SMW09-TGR",
+              storeName: "Lazada 泰国时尚生活馆",
+              warehouse: "曼谷1号海外仓 (TH-01)",
+              time: "2024-10-24 09:40:00",
+              status: "待同步"
+            },
+            {
+              key: "4",
+              ruleName: "Shopee菲律宾日用美妆货位同步",
+              productSku: "BE-HYA50-CRE",
+              storeName: "Shopee 菲律宾数码精选",
+              warehouse: "东莞虎门跨境集运仓",
+              time: "2024-10-24 09:20:15",
+              status: "推送成功"
+            },
+            {
+              key: "5",
+              ruleName: "Shopee新加坡保税库存自动更新",
+              productSku: "HM-THM900-WHT",
+              storeName: "Shopee 新加坡3C专营店",
+              warehouse: "雪兰莪海外仓 (MY-01)",
+              time: "2024-10-24 08:50:00",
+              status: "推送异常(重试中)"
+            },
+            {
+              key: "6",
+              ruleName: "TikTok越南潮电库存限额推送",
+              productSku: "HM-DRY18-PUR",
+              storeName: "TikTok 越南流行服饰店",
+              warehouse: "深圳宝安保税总仓",
+              time: "2024-10-24 08:30:00",
+              status: "推送成功"
+            }
+          ]} 
           locale={{ emptyText: '暂无数据' }}
           pagination={{ placement: 'bottomRight' }}
         />

@@ -50,15 +50,26 @@ const InventoryAgePage: React.FC = () => {
         <Space className="w-full flex-wrap gap-4" align="center">
           <div className="flex items-center gap-2">
             <span className="text-gray-600">仓库:</span>
-            <Select style={{ width: 200 }} allowClear />
+            <Select 
+              style={{ width: 200 }} 
+              placeholder="选择仓库"
+              allowClear 
+              options={[
+                { label: '全部仓库', value: 'all' },
+                { label: '深圳宝安保税总仓', value: 'SZ' },
+                { label: '东莞虎门跨境集运仓', value: 'DG' },
+                { label: '曼谷1号海外仓 (TH-01)', value: 'TH' },
+                { label: '雪兰莪海外仓 (MY-01)', value: 'MY' },
+                { label: '义乌国际小商品中转仓', value: 'YW' },
+              ]}
+            />
           </div>
-          <Input placeholder="系统编码" prefix="系统编码:" style={{ width: 250 }} />
-          <Input placeholder="SKU" prefix="SKU:" style={{ width: 250 }} />
+          <Input placeholder="系统编码" prefix="系统编码:" style={{ width: 220 }} />
+          <Input placeholder="SKU" prefix="SKU:" style={{ width: 220 }} />
           <div className="flex items-center gap-2">
-            <span className="text-gray-600">日期:</span>
+            <span className="text-gray-600">统计日期:</span>
             <RangePicker />
           </div>
-          <Input placeholder="用户名" prefix="用户名:" style={{ width: 200 }} />
           <Button type="primary" icon={<SearchOutlined />}>查询</Button>
           <Button icon={<ReloadOutlined />}>重置</Button>
           <Button icon={<ExportOutlined />}>导出</Button>
@@ -69,85 +80,93 @@ const InventoryAgePage: React.FC = () => {
         <Table 
           columns={columns} 
           dataSource={[
-  {
-    key: "1",
-    productInfo: "2024新款智能手表监控防水运动手环",
-    productDetails: "2024新款智能手表监控防水运动手环",
-    initialEndingStock: 10,
-    inboundOutboundStock: 10,
-    stock: 10,
-    lessThan30: 50,
-    days30to90: 50,
-    days90to180: 50,
-    moreThan180: 50
-  },
-  {
-    key: "2",
-    productInfo: "无线蓝牙耳机降噪入耳式长续航",
-    productDetails: "无线蓝牙耳机降噪入耳式长续航",
-    initialEndingStock: 25,
-    inboundOutboundStock: 25,
-    stock: 25,
-    lessThan30: 60,
-    days30to90: 60,
-    days90to180: 60,
-    moreThan180: 60
-  },
-  {
-    key: "3",
-    productInfo: "纯棉短袖T恤男夏季宽松百搭",
-    productDetails: "纯棉短袖T恤男夏季宽松百搭",
-    initialEndingStock: 40,
-    inboundOutboundStock: 40,
-    stock: 40,
-    lessThan30: 70,
-    days30to90: 70,
-    days90to180: 70,
-    moreThan180: 70
-  },
-  {
-    key: "4",
-    productInfo: "户外便携运动水杯大容量防漏",
-    productDetails: "户外便携运动水杯大容量防漏",
-    initialEndingStock: 55,
-    inboundOutboundStock: 55,
-    stock: 55,
-    lessThan30: 80,
-    days30to90: 80,
-    days90to180: 80,
-    moreThan180: 80
-  },
-  {
-    key: "5",
-    productInfo: "家用多功能颈椎按摩仪护颈",
-    productDetails: "家用多功能颈椎按摩仪护颈",
-    initialEndingStock: 70,
-    inboundOutboundStock: 70,
-    stock: 70,
-    lessThan30: 90,
-    days30to90: 90,
-    days90to180: 90,
-    moreThan180: 90
-  },
-  {
-    key: "6",
-    productInfo: "2024新款智能手表监控防水运动手环",
-    productDetails: "2024新款智能手表监控防水运动手环",
-    initialEndingStock: 85,
-    inboundOutboundStock: 85,
-    stock: 85,
-    lessThan30: 100,
-    days30to90: 100,
-    days90to180: 100,
-    moreThan180: 100
-  }
-]} 
+            {
+              key: "1",
+              productInfo: "智选高配版真无线主动降噪蓝牙耳机",
+              productDetails: "3C-ANC08-BLK / 曜石黑-标准版 (0.16kg)",
+              initialEndingStock: "1,200 / 1,240",
+              inboundOutboundStock: "500 / 460 / 380件",
+              stock: "1,240",
+              lessThan30: "780",
+              days30to90: "320",
+              days90to180: "110",
+              moreThan180: "30"
+            },
+            {
+              key: "2",
+              productInfo: "65W GaN氮化镓三口超级快充头",
+              productDetails: "3C-GAN65-SLV / 银灰折叠款 (0.22kg)",
+              initialEndingStock: "2,600 / 2,850",
+              inboundOutboundStock: "1,000 / 750 / 620件",
+              stock: "2,850",
+              lessThan30: "1,850",
+              days30to90: "720",
+              days90to180: "220",
+              moreThan180: "60"
+            },
+            {
+              key: "3",
+              productInfo: "智能高清心率血氧监测运动手表",
+              productDetails: "3C-SMW09-TGR / 钛空灰-氟橡胶 (0.18kg)",
+              initialEndingStock: "650 / 680",
+              inboundOutboundStock: "300 / 270 / 240件",
+              stock: "680",
+              lessThan30: "390",
+              days30to90: "180",
+              days90to180: "85",
+              moreThan180: "25"
+            },
+            {
+              key: "4",
+              productInfo: "玻尿酸密集水润舒缓修护面霜 (50g)",
+              productDetails: "BE-HYA50-CRE / 滋润型 (0.21kg)",
+              initialEndingStock: "3,200 / 3,500",
+              inboundOutboundStock: "2,000 / 1,700 / 1,350件",
+              stock: "3,500",
+              lessThan30: "2,400",
+              days30to90: "850",
+              days90to180: "200",
+              moreThan180: "50"
+            },
+            {
+              key: "5",
+              productInfo: "304不锈钢大容量双饮保温吸管杯",
+              productDetails: "HM-THM900-WHT / 900ml哑光奶白 (0.48kg)",
+              initialEndingStock: "1,750 / 1,820",
+              inboundOutboundStock: "800 / 730 / 610件",
+              stock: "1,820",
+              lessThan30: "1,120",
+              days30to90: "480",
+              days90to180: "170",
+              moreThan180: "50"
+            },
+            {
+              key: "6",
+              productInfo: "超轻防泼水双肩徒步旅行折叠包",
+              productDetails: "OD-BP20L-ARM / 20L军绿色 (0.15kg)",
+              initialEndingStock: "3,900 / 4,120",
+              inboundOutboundStock: "1,500 / 1,280 / 1,020件",
+              stock: "4,120",
+              lessThan30: "2,650",
+              days30to90: "1,100",
+              days90to180: "310",
+              moreThan180: "60"
+            }
+          ]} 
           locale={{ emptyText: '暂无数据' }}
           pagination={{ placement: 'bottomRight' }}
           scroll={{ x: 1500 }}
         />
-        <div className="mt-4 text-gray-500 text-sm">
-            合计 | 数量:  | 库存体积:  m³ | {'<'}30天:m³ | {'>'}30-90天:  m³ | {'>'}90-180天:  m³ | {'>'}180天:  m³
+        <div className="mt-4 p-3 bg-slate-50 border border-slate-200 rounded text-slate-700 text-sm flex flex-wrap gap-4 items-center justify-between">
+          <span className="font-semibold text-slate-800">在库库龄指标汇总：</span>
+          <div className="space-x-4">
+            <span>总在库数量: <strong className="text-slate-900">14,210</strong> 件</span>
+            <span>总在库体积: <strong className="text-slate-900">12.65</strong> m³</span>
+            <span>&lt;30天 (健康): <strong className="text-emerald-600">9,190 件 (8.18 m³)</strong></span>
+            <span>30-90天 (正常): <strong className="text-blue-600">3,650 件 (3.26 m³)</strong></span>
+            <span>90-180天 (预警): <strong className="text-amber-600">1,095 件 (0.98 m³)</strong></span>
+            <span>&gt;180天 (滞销): <strong className="text-rose-600">275 件 (0.23 m³)</strong></span>
+          </div>
         </div>
       </Card>
     </div>

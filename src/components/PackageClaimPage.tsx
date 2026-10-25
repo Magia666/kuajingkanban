@@ -30,38 +30,64 @@ const PackageClaimPage: React.FC = () => {
   ];
 
   const tabItems: TabsProps['items'] = [
-    { key: 'linked', label: '关联订单' },
-    { key: 'unlinked', label: '未关联订单' },
-    { key: 'pending', label: '待认领' },
+    { key: 'linked', label: '已关联订单 (4)' },
+    { key: 'unlinked', label: '待关联订单 (2)' },
+    { key: 'pending', label: '待处理异常件 (1)' },
   ];
 
   const subTabItems: TabsProps['items'] = [
-    { key: 'pending', label: '待出货 (0)' },
-    { key: 'shipped', label: '已重出 (0)' },
-    { key: 'destroyed', label: '已销毁 (0)' },
+    { key: 'pending', label: '待出货 (4)' },
+    { key: 'shipped', label: '已重出 (12)' },
+    { key: 'destroyed', label: '已销毁 (1)' },
   ];
 
   return (
     <div className="p-6 bg-slate-50 min-h-screen">
-      <h1 className="text-xl font-bold mb-4">包裹认领</h1>
+      <div className="flex justify-between items-center mb-4">
+        <div>
+          <h1 className="text-xl font-bold text-slate-800">包裹认领</h1>
+          <p className="text-xs text-slate-500 mt-1">处理换标、拆箱合包、拒签退回件并重新关联出库发运订单</p>
+        </div>
+      </div>
       
       <Card className="mb-4">
         <Tabs activeKey={activeTab} onChange={setActiveTab} items={tabItems} />
         
         <div className="flex flex-wrap gap-4 mt-4 items-center">
-            <Select placeholder="仓库" style={{ width: 180 }} allowClear />
-            <Select placeholder="上架时间" style={{ width: 180 }} allowClear />
-            <RangePicker showTime style={{ width: 250 }} />
-            <Select placeholder="扫描单号" style={{ width: 180 }} allowClear />
-            <Input placeholder="输入单号" style={{ width: 180 }} />
+            <Select 
+              placeholder="请选择仓库" 
+              style={{ width: 190 }} 
+              allowClear 
+              options={[
+                { label: '全部仓库', value: 'all' },
+                { label: '东莞虎门跨境集运仓', value: 'DG-01' },
+                { label: '深圳宝安保税总仓', value: 'SZ-01' },
+                { label: '马来西亚雪兰莪海外仓 (MY-01)', value: 'MY-01' },
+                { label: '义乌国际小商品中转仓', value: 'YW-01' },
+              ]}
+            />
+            <Select 
+              placeholder="扫描方式" 
+              style={{ width: 150 }} 
+              defaultValue="express"
+              options={[
+                { label: '按快递运单号', value: 'express' },
+                { label: '按原平台订单号', value: 'order' },
+                { label: '按包裹内部编号', value: 'pkg' },
+              ]}
+            />
+            <RangePicker showTime style={{ width: 280 }} />
+            <Input placeholder="输入快递单号 / 订单号" style={{ width: 220 }} />
             <Button type="primary" icon={<SearchOutlined />}>查询</Button>
             <Button icon={<ReloadOutlined />}>重置</Button>
         </div>
       </Card>
       
       <Card>
-        <Button icon={<ExportOutlined />} className="mb-4">导出</Button>
-        <Tabs activeKey={activeSubTab} onChange={setActiveSubTab} items={subTabItems} type="card" />
+        <div className="flex justify-between items-center mb-4">
+          <Tabs activeKey={activeSubTab} onChange={setActiveSubTab} items={subTabItems} type="card" className="mb-0" />
+          <Button icon={<ExportOutlined />}>导出包裹清单</Button>
+        </div>
 
         <Table 
           columns={columns} 

@@ -22,22 +22,32 @@ const WarehouseInboundPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('all');
 
   const columns: TableColumnsType<WarehouseInboundData> = [
-    { title: '入库单号', dataIndex: 'inboundNumber', key: 'inboundNumber' },
-    { title: '状态', dataIndex: 'status', key: 'status' },
+    { title: '入库单号', dataIndex: 'inboundNumber', key: 'inboundNumber', render: (t) => <span className="font-mono text-blue-600 font-medium">{t}</span> },
+    { 
+      title: '状态', 
+      dataIndex: 'status', 
+      key: 'status',
+      render: (status: string) => {
+        if (status.includes('已完成')) return <span className="px-2 py-0.5 rounded text-xs bg-emerald-100 text-emerald-800">已完成入库</span>;
+        if (status.includes('待质检')) return <span className="px-2 py-0.5 rounded text-xs bg-blue-100 text-blue-800">待质检</span>;
+        if (status.includes('上架中')) return <span className="px-2 py-0.5 rounded text-xs bg-amber-100 text-amber-800">上架中</span>;
+        if (status.includes('异常')) return <span className="px-2 py-0.5 rounded text-xs bg-rose-100 text-rose-800">入库异常</span>;
+        return <span className="px-2 py-0.5 rounded text-xs bg-slate-100 text-slate-800">{status}</span>;
+      }
+    },
     { title: '订单类型', dataIndex: 'type', key: 'type' },
     { title: '运单号', dataIndex: 'waybillNumber', key: 'waybillNumber' },
     { title: '创建时间', dataIndex: 'createTime', key: 'createTime' },
     { title: '入库时间', dataIndex: 'inboundTime', key: 'inboundTime' },
-    { title: '商品sku', dataIndex: 'sku', key: 'sku' },
+    { title: '商品sku', dataIndex: 'sku', key: 'sku', render: (t) => <span className="font-mono">{t}</span> },
     { title: '系统编码', dataIndex: 'systemCode', key: 'systemCode' },
   ];
 
   const tabItems: TabsProps['items'] = [
-    { key: 'all', label: '全部(18)' },
-    { key: 'pending', label: '待入库(0)' },
-    { key: 'completed', label: '已入库(17)' },
-    { key: 'partial', label: '部分入库(0)' },
-    { key: 'abnormal', label: '异常入库(1)' },
+    { key: 'all', label: '全部 (6)' },
+    { key: 'pending', label: '待质检/上架 (2)' },
+    { key: 'completed', label: '已完成入库 (3)' },
+    { key: 'abnormal', label: '异常入库 (1)' },
   ];
 
   return (
@@ -49,13 +59,34 @@ const WarehouseInboundPage: React.FC = () => {
         
         <Form layout="inline" className="mt-4 gap-4">
           <Form.Item label="入库单号">
-            <Input placeholder="入库单号" style={{ width: 180 }} />
+            <Input placeholder="输入IB单号" style={{ width: 180 }} />
           </Form.Item>
           <Form.Item label="状态">
-            <Select placeholder="状态" style={{ width: 180 }} />
+            <Select 
+              placeholder="选择状态" 
+              style={{ width: 180 }} 
+              allowClear
+              options={[
+                { label: '全部状态', value: 'all' },
+                { label: '待质检', value: 'qc' },
+                { label: '上架中', value: 'shelving' },
+                { label: '已完成入库', value: 'completed' },
+                { label: '入库异常', value: 'abnormal' },
+              ]}
+            />
           </Form.Item>
           <Form.Item label="订单类型">
-            <Select placeholder="订单类型" style={{ width: 180 }} />
+            <Select 
+              placeholder="选择订单类型" 
+              style={{ width: 180 }} 
+              allowClear
+              options={[
+                { label: '全部类型', value: 'all' },
+                { label: '采购入库', value: 'procure' },
+                { label: '退货换标入库', value: 'return' },
+                { label: '海外调拨入库', value: 'transfer' },
+              ]}
+            />
           </Form.Item>
           <Form.Item label="运单号">
             <Input placeholder="运单号" style={{ width: 180 }} />

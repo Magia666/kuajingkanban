@@ -47,10 +47,46 @@ const DistributionLogPage: React.FC = () => {
         <Space className="w-full flex-wrap gap-4" align="center">
           <Input placeholder="sku" prefix="sku:" style={{ width: 180 }} />
           <Input placeholder="商品名称" prefix="名称:" style={{ width: 180 }} />
-          <Input placeholder="系统编码" prefix="系统编码:" style={{ width: 180 }} />
-          <Select placeholder="请选择供应商" prefix="供应商:" style={{ width: 180 }} allowClear />
-          <Select placeholder="出库库" prefix="出库库:" style={{ width: 180 }} allowClear />
-          <Select placeholder="仓库" prefix="仓库:" style={{ width: 180 }} allowClear />
+          <Input placeholder="系统编码" prefix="编码:" style={{ width: 180 }} />
+          <Select 
+            placeholder="请选择供应商" 
+            prefix="供应商:" 
+            style={{ width: 220 }} 
+            allowClear 
+            options={[
+              { label: '全部供应商', value: 'all' },
+              { label: '深圳市创世声学科技有限公司', value: 'CS-TECH' },
+              { label: '东莞倍思智能制造有限责任公司', value: 'BS-TECH' },
+              { label: '广州环球美妆日化源头厂', value: 'HQ-BEAUTY' },
+              { label: '浙江义乌户外家居制品厂', value: 'YW-OUTDOOR' },
+            ]}
+          />
+          <Select 
+            placeholder="出库类型" 
+            prefix="出库类型:" 
+            style={{ width: 180 }} 
+            allowClear 
+            options={[
+              { label: '全部类型', value: 'all' },
+              { label: '一件代发出库', value: 'dropship' },
+              { label: '分销调拨出库', value: 'transfer' },
+              { label: '退货出库', value: 'return' },
+              { label: '盘亏出库', value: 'loss' },
+            ]}
+          />
+          <Select 
+            placeholder="所属仓库" 
+            prefix="仓库:" 
+            style={{ width: 200 }} 
+            allowClear 
+            options={[
+              { label: '全部仓库', value: 'all' },
+              { label: '东莞虎门跨境集运仓', value: 'DG-01' },
+              { label: '深圳宝安保税总仓', value: 'SZ-01' },
+              { label: '马来西亚雪兰莪海外仓 (MY-01)', value: 'MY-01' },
+              { label: '义乌国际小商品中转仓', value: 'YW-01' },
+            ]}
+          />
           <RangePicker />
           <Button type="primary" icon={<SearchOutlined />}>查询</Button>
           <Button icon={<ReloadOutlined />}>重置</Button>

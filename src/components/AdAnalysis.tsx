@@ -9,10 +9,13 @@ import {
 import { COLORS } from "@/lib/charts";
 
 const spendTrendData = [
-  { day: '01', spend: 400, revenue: 1200 }, { day: '05', spend: 520, revenue: 1800 },
-  { day: '10', spend: 480, revenue: 1540 }, { day: '15', spend: 610, revenue: 2400 },
-  { day: '20', spend: 590, revenue: 2100 }, { day: '25', spend: 720, revenue: 3200 },
-  { day: '30', spend: 840, revenue: 3800 },
+  { day: '01日', spend: 4200, revenue: 18900 }, 
+  { day: '05日', spend: 4800, revenue: 21600 },
+  { day: '10日', spend: 5100, revenue: 23200 }, 
+  { day: '15日', spend: 5400, revenue: 24500 },
+  { day: '20日', spend: 4900, revenue: 22100 }, 
+  { day: '25日', spend: 5300, revenue: 24200 },
+  { day: '30日', spend: 5600, revenue: 25800 },
 ];
 
 const platformData = [
@@ -42,9 +45,9 @@ export default function AdAnalysis() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 sm:px-0">
-        <AdStatCard icon={<DollarSign />} label="总广告支" value="¥152,400" sub="本月消耗" color="blue" />
-        <AdStatCard icon={<Target />} label="总转化数" value="3,214" sub="订单成交" color="emerald" />
-        <AdStatCard icon={<MousePointer2 />} label="平均 CPC" value="¥2.45" sub="点击成本" color="amber" />
+        <AdStatCard icon={<DollarSign />} label="总广告支出" value="¥152,400" sub="本月累计消耗" color="blue" />
+        <AdStatCard icon={<Target />} label="总转化订单数" value="3,214" sub="成交订单" color="emerald" />
+        <AdStatCard icon={<MousePointer2 />} label="平均点击成本 (CPC)" value="¥2.45" sub="单次点击成本" color="amber" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 sm:px-0">

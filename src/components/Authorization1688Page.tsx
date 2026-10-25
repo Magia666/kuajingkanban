@@ -43,55 +43,55 @@ const Authorization1688Page: React.FC = () => {
         <Table 
           columns={columns} 
           dataSource={[
-  {
-    key: "1",
-    account: "ali_test_user_01",
-    remark: "主采购账号",
-    authTime: "2024-05-10 14:10:00",
-    authStatus: "已授权",
-    expirationTime: "2025-05-10 14:10:00"
-  },
-  {
-    key: "2",
-    account: "ali_buyer_02",
-    remark: "服装类目采购",
-    authTime: "2024-05-11 14:15:00",
-    authStatus: "已授权",
-    expirationTime: "2025-05-11 14:15:00"
-  },
-  {
-    key: "3",
-    account: "supplier_sync_03",
-    remark: "自动发货接口账号",
-    authTime: "2024-05-12 14:20:00",
-    authStatus: "授权失效",
-    expirationTime: "2024-01-12 14:20:00"
-  },
-  {
-    key: "4",
-    account: "electronics_purchaser",
-    remark: "电子产品采购专员",
-    authTime: "2024-05-13 14:25:00",
-    authStatus: "已授权",
-    expirationTime: "2025-05-13 14:25:00"
-  },
-  {
-    key: "5",
-    account: "shop_mgr_05",
-    remark: "备用账号",
-    authTime: "2024-05-14 14:30:00",
-    authStatus: "未授权",
-    expirationTime: "-"
-  },
-  {
-    key: "6",
-    account: "ali_buyer_06",
-    remark: "家居类采购",
-    authTime: "2024-05-15 14:35:00",
-    authStatus: "授权失效",
-    expirationTime: "2024-03-15 14:35:00"
-  }
-]} 
+            {
+              key: "1",
+              account: "ali_crossborder_sz01",
+              remark: "主采购账号 · 联创智能供应商直连",
+              authTime: "2024-05-10 14:10:00",
+              authStatus: "已授权",
+              expirationTime: "2025-05-10 14:10:00"
+            },
+            {
+              key: "2",
+              account: "ali_buyer_fashion02",
+              remark: "服饰美妆类目采购专员",
+              authTime: "2024-05-11 14:15:00",
+              authStatus: "已授权",
+              expirationTime: "2025-05-11 14:15:00"
+            },
+            {
+              key: "3",
+              account: "supplier_sync_api03",
+              remark: "自动发货接口备用账号",
+              authTime: "2024-05-12 14:20:00",
+              authStatus: "授权失效",
+              expirationTime: "2024-11-12 14:20:00"
+            },
+            {
+              key: "4",
+              account: "electronics_purchaser_04",
+              remark: "3C数码快充与耳机采购专号",
+              authTime: "2024-05-13 14:25:00",
+              authStatus: "已授权",
+              expirationTime: "2025-05-13 14:25:00"
+            },
+            {
+              key: "5",
+              account: "shop_mgr_spare05",
+              remark: "义乌集运货源备用账号",
+              authTime: "2024-05-14 14:30:00",
+              authStatus: "未授权",
+              expirationTime: "-"
+            },
+            {
+              key: "6",
+              account: "ali_buyer_home06",
+              remark: "家居百货采购 (需续签阿里企业开放平台服务)",
+              authTime: "2024-05-15 14:35:00",
+              authStatus: "授权失效",
+              expirationTime: "2024-10-15 14:35:00"
+            }
+          ]} 
           locale={{ emptyText: '暂无数据' }}
           pagination={{ placement: 'bottomRight' }}
         />

@@ -68,20 +68,71 @@ const ProfitStatisticsPage: React.FC = () => {
       
       <Card className="mb-4">
         <Row gutter={[16, 16]}>
-          <Col span={6}><Select placeholder="平台类型" style={{ width: '100%' }} allowClear /></Col>
-          <Col span={6}><Input placeholder="订单状态" /></Col>
-          <Col span={12}><Input placeholder="订单号" /></Col>
-          <Col span={6}><Input placeholder="仓库" /></Col>
-          <Col span={6}><Input placeholder="店铺" /></Col>
-          <Col span={12}><Input placeholder="系统状态" /></Col>
-          <Col span={12}><RangePicker showTime style={{ width: '100%' }} /></Col>
-          <Col span={12}><RangePicker showTime style={{ width: '100%' }} /></Col>
-          <Col span={12}><RangePicker showTime style={{ width: '100%' }} /></Col>
+          <Col span={6}>
+            <div className="text-xs text-slate-500 mb-1">电商平台:</div>
+            <Select 
+              placeholder="选择平台类型" 
+              style={{ width: '100%' }} 
+              allowClear 
+              options={[
+                { label: '全部平台', value: 'all' },
+                { label: 'Shopee', value: 'shopee' },
+                { label: 'TikTok Shop', value: 'tiktok' },
+                { label: 'Lazada', value: 'lazada' },
+              ]}
+            />
+          </Col>
+          <Col span={6}>
+            <div className="text-xs text-slate-500 mb-1">订单状态:</div>
+            <Select 
+              placeholder="选择订单状态" 
+              style={{ width: '100%' }} 
+              allowClear 
+              options={[
+                { label: '全部状态', value: 'all' },
+                { label: '已妥投', value: 'delivered' },
+                { label: '运输中', value: 'in_transit' },
+                { label: '待发货', value: 'pending' },
+                { label: '退货退款', value: 'refund' },
+              ]}
+            />
+          </Col>
+          <Col span={6}>
+            <div className="text-xs text-slate-500 mb-1">履约仓库:</div>
+            <Select 
+              placeholder="选择发货仓库" 
+              style={{ width: '100%' }} 
+              allowClear 
+              options={[
+                { label: '全部仓库', value: 'all' },
+                { label: '东莞虎门跨境集运仓', value: 'DG' },
+                { label: '深圳宝安保税总仓', value: 'SZ' },
+                { label: '马来西亚雪兰莪海外仓', value: 'MY' },
+                { label: '义乌国际小商品中转仓', value: 'YW' },
+              ]}
+            />
+          </Col>
+          <Col span={6}>
+            <div className="text-xs text-slate-500 mb-1">订单编号:</div>
+            <Input placeholder="输入 SP- / TT- / LZ- 订单号" />
+          </Col>
+          <Col span={8}>
+            <div className="text-xs text-slate-500 mb-1">下单时间范围:</div>
+            <RangePicker showTime placeholder={['下单开始', '下单截止']} style={{ width: '100%' }} />
+          </Col>
+          <Col span={8}>
+            <div className="text-xs text-slate-500 mb-1">仓库发货时间范围:</div>
+            <RangePicker showTime placeholder={['发货开始', '发货截止']} style={{ width: '100%' }} />
+          </Col>
+          <Col span={8}>
+            <div className="text-xs text-slate-500 mb-1">平台回款结算时间:</div>
+            <RangePicker showTime placeholder={['结算开始', '结算截止']} style={{ width: '100%' }} />
+          </Col>
           <Col span={24}>
             <Space>
-              <Button type="primary" icon={<SearchOutlined />}>查询</Button>
+              <Button type="primary" icon={<SearchOutlined />}>统计分析</Button>
               <Button icon={<ReloadOutlined />}>重置</Button>
-              <Button icon={<ExportOutlined />}>导出</Button>
+              <Button icon={<ExportOutlined />}>导出利润明细表</Button>
             </Space>
           </Col>
         </Row>
